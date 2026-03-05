@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Epikal",
+  title: "Wabotti",
   description: "Plataforma para negocios de servicios",
 };
 

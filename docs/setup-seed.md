@@ -20,7 +20,7 @@ El script `seed.ts` genera las siguientes credenciales para pruebas locales. La 
 
 | Email | Nombre | Rol | Empresa |
 | :--- | :--- | :--- | :--- |
-| `superadmin@epikal.com` | Super Admin | SUPERADMIN | Epikal HQ |
+| `superadmin@wabotti.com` | Super Admin | SUPERADMIN | Wabotti HQ |
 | `admin@clinica-aurora.com` | Dra. Clínica Admin | OWNER | Clínica Aurora |
 | `pro1@clinica-aurora.com` | María Profesional | STAFF | Clínica Aurora |
 | `pro2@clinica-aurora.com` | Laura Profesional | STAFF | Clínica Aurora |

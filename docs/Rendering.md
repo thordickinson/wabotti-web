@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir cómo Epikal genera y sirve las **páginas web públicas** de los clientes,
+Definir cómo Wabotti genera y sirve las **páginas web públicas** de los clientes,
 priorizando:
 
 - Velocidad extrema de carga
@@ -14,7 +14,7 @@ priorizando:
 
 ## Principio General
 
-Las páginas web públicas de Epikal:
+Las páginas web públicas de Wabotti:
 
 - **NO son apps React**
 - **NO se renderizan en runtime con SSR**
@@ -99,7 +99,7 @@ El paquete contiene:
 
 ### Variables de Estilo (CSS Variables)
 
-El branding se inyecta como **CSS Variables**:
+El branding se inywabotti.como **CSS Variables**:
 
 Ejemplos:
 - `--color-primary`
@@ -125,7 +125,7 @@ Cada página incluye un **JS liviano**, responsable de:
   - Agente de IA
   - Tracking (UTMs, analytics)
 - Manejar interacciones básicas
-- Enviar eventos a Epikal (conversiones, clicks)
+- Enviar eventos a Wabotti (conversiones, clicks)
 
 👉 No es un framework, es **JS plano y controlado**.
 
@@ -135,7 +135,7 @@ Cada página incluye un **JS liviano**, responsable de:
 
 - Todos los clientes viven en el **mismo clúster**
 - Cada cliente:
-  - Apunta su dominio a Epikal
+  - Apunta su dominio a Wabotti
 - El sistema resuelve:
   - Dominio → Empresa → Template → Datos
 

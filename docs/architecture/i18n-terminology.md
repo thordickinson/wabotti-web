@@ -1,6 +1,6 @@
 # Internationalization (i18n) & Custom Terminology
 
-This document defines the strategy for supporting multiple languages and client-specific terminology (e.g., "Pacientes" vs "Clientes") in the Epikal platform.
+This document defines the strategy for supporting multiple languages and client-specific terminology (e.g., "Pacientes" vs "Clientes") in the Wabotti platform.
 
 ---
 
@@ -77,7 +77,7 @@ We need a custom hook or utility that merges standard translations with company 
 
 **Example Usage (Pseudo-code):**
 ```typescript
-const { t } = useEpikalTranslation();
+const { t } = useWabottiTranslation();
 
 // If company vocabulary is { "professional": "Barbero" }
 // translate("Tu cita con ${professional} ha sido agendada")
@@ -89,7 +89,7 @@ const { t } = useEpikalTranslation();
 ## 5. Admin Interface
 
 ### Super Admin
-- Interface to set the "Industry Template" for a company (e.g., "Medical Template").
+- Interface to set the "Industry Template" for a company (e.g., "Wabotti.com template").
 - Apply a preset of vocabulary terms on company creation.
 
 ### Client Admin

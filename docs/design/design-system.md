@@ -1,12 +1,12 @@
 # Design System & Brand Identity
 
-This document defines the visual standards for the **Epikal** application application, centered around a modern, trustworthy, and professional aesthetic.
+This document defines the visual standards for the **Wabotti** application application, centered around a modern, trustworthy, and professional aesthetic.
 
 ---
 
 ## 🎨 Color Palette
 
-The brand color is **Epikal Indigo** (`#471ca8`), a deep, rich purple that signifies innovation and stability. We pair this with cool-toned **Slate** neutrals.
+The brand color is **Wabotti Indigo** (`#471ca8`), a deep, rich purple that signifies innovation and stability. We pair this with cool-toned **Slate** neutrals.
 
 ### Primary Colors (Indigo)
 

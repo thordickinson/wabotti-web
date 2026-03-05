@@ -11,7 +11,7 @@ Su función es alimentar el modelo de datos que el sistema de Rendering usará p
 
 ## Filosofía del Diseño
 
-1.  **Template-First:** Epikal provee la estructura. El usuario provee el contenido.
+1.  **Template-First:** Wabotti provee la estructura. El usuario provee el contenido.
 2.  **Configuración, no Construcción:** Se activan/desactivan features, no se "crean bloques".
 3.  **Data-Driven Visibility:** Si un elemento no tiene datos (ej: no hay testimonios), la sección desaparece automáticamente.
 4.  **Consistencia:** Garantizamos que el sitio se vea bien restringiendo la libertad de diseño.
@@ -51,7 +51,7 @@ Define qué template se usa y los parámetros globales.
 
 **Atributos clave:**
 - `companyId`
-- `templateId` (ej: 'epikal-health-v1')
+- `templateId` (ej: 'wabotti-health-v1')
 - `primaryColor`
 - `secondaryColor`
 - `logoUrl`
@@ -129,4 +129,4 @@ Controla el estado de las secciones predefinidas por el template. **No se pueden
 
 ## Resultado Esperado
 
-Un panel de control aburrido pero efectivo, que impide que el usuario "rompa" el diseño, asegurando que todas las páginas de Epikal se vean profesionales y optimizadas para conversión.
+Un panel de control aburrido pero efectivo, que impide que el usuario "rompa" el diseño, asegurando que todas las páginas de Wabotti se vean profesionales y optimizadas para conversión.

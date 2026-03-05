@@ -273,7 +273,7 @@ export default function SiteEditorPage() {
                                             ✓ Activo
                                         </Badge>
                                     </div>
-                                    <CardTitle className="text-lg">Analiticas Epikal</CardTitle>
+                                    <CardTitle className="text-lg">Analiticas Wabotti</CardTitle>
                                     <CardDescription>Estadísticas básicas de visitas y agendamientos siempre activas.</CardDescription>
                                 </CardHeader>
                             </Card>
@@ -417,7 +417,7 @@ export default function SiteEditorPage() {
                             </h3>
                             <p className="text-xs text-muted-foreground leading-relaxed">
                                 Estas integraciones permiten que tu sitio web envíe datos directamente a tus plataformas de marketing.
-                                Epikal Analytics siempre está activo para darte las métricas del dashboard sin necesidad de configuración externa.
+                                Wabotti Analytics siempre está activo para darte las métricas del dashboard sin necesidad de configuración externa.
                             </p>
                         </div>
                     </TabsContent>

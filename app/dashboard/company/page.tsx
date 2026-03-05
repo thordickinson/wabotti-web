@@ -386,7 +386,7 @@ export default function CompanySettingsPage() {
                                         <Label htmlFor="slug">Enlace público</Label>
                                         <div className="flex rounded-md shadow-sm">
                                             <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-input bg-muted text-muted-foreground text-sm">
-                                                epikal.com/
+                                                wabotti.com/
                                             </span>
                                             <Input
                                                 id="slug"

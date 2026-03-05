@@ -20,7 +20,7 @@ export default async function BookingPage(
         const slug = domain.split(".")[0];
         company = await prisma.company.findUnique({ where: { slug } });
     } else {
-        const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "epikal.com";
+        const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "wabotti.com";
         if (domain.endsWith(`.${rootDomain}`)) {
             const slug = domain.replace(`.${rootDomain}`, "");
             company = await prisma.company.findUnique({ where: { slug } });

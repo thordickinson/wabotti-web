@@ -59,7 +59,7 @@ export async function GET(
             include: companyInclude as any
         });
     } else {
-        const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "epikal.com";
+        const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "wabotti.com";
         if (domain.endsWith(`.${rootDomain}`)) {
             const slug = domain.replace(`.${rootDomain}`, "");
             company = await prisma.company.findUnique({
@@ -297,7 +297,7 @@ export async function GET(
 
     // 4. Inject Scripts
     const templateDataScript = `<script>window.TEMPLATE_DATA = ${JSON.stringify(templateData)};</script>`;
-    const analyticsConfigScript = `<script>window.EPIKAL_ANALYTICS = ${JSON.stringify(analyticsConfig)};</script>`;
+    const analyticsConfigScript = `<script>window.WABOTTI_ANALYTICS = ${JSON.stringify(analyticsConfig)};</script>`;
 
 
     // Read and inline analytics script

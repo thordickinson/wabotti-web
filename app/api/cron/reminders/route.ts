@@ -77,7 +77,7 @@ export async function GET(req: Request) {
 
                         // Construct URLs
                         const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
-                        const host = process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'epikal.com';
+                        const host = process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'wabotti.com';
                         const siteHost = company.customDomain || `${company.slug}.${host}`;
 
                         const rescheduleUrl = booking.rescheduleToken

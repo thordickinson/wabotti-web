@@ -116,11 +116,11 @@ A minimal JavaScript snippet is injected into every public page via `TEMPLATE_DA
 
 ```javascript
 // Injected into <head>
-window.EPIKAL_ANALYTICS = {
+window.WABOTTI_ANALYTICS = {
   companyId: "${company.id}",
   pageType: "service-detail",
   serviceId: "${service.id}", // if applicable
-  sessionId: getCookie('epikal_session') || generateSessionId()
+  sessionId: getCookie('eWabotti_session') || generateSessionId()
 };
 
 // Track page view on load
@@ -129,7 +129,7 @@ fetch('/api/analytics/track', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     type: 'pageview',
-    ...window.EPIKAL_ANALYTICS,
+    ...window.WABOTTI_ANALYTICS,
     path: window.location.pathname,
     utm: extractUTM(window.location.search)
   })

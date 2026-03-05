@@ -78,10 +78,10 @@
 
         const payload = {
             type: 'pageview',
-            companyId: window.EPIKAL_ANALYTICS.companyId,
+            companyId: window.WABOTTI_ANALYTICS.companyId,
             path: window.location.pathname,
-            pageType: window.EPIKAL_ANALYTICS.pageType || 'unknown',
-            serviceId: window.EPIKAL_ANALYTICS.serviceId || null,
+            pageType: window.WABOTTI_ANALYTICS.pageType || 'unknown',
+            serviceId: window.WABOTTI_ANALYTICS.serviceId || null,
             sessionId: sessionId,
             visitorId: visitorId,
             utm: extractUTM()
@@ -103,7 +103,7 @@
     // =========================================================================
 
     function initGTM() {
-        const gtmId = window.EPIKAL_ANALYTICS?.gtmContainerId;
+        const gtmId = window.WABOTTI_ANALYTICS?.gtmContainerId;
         if (!gtmId) return;
 
         // Inject GTM script
@@ -122,9 +122,9 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'page_view',
-            page_type: window.EPIKAL_ANALYTICS.pageType,
-            service_id: window.EPIKAL_ANALYTICS.serviceId,
-            service_name: window.EPIKAL_ANALYTICS.serviceName
+            page_type: window.WABOTTI_ANALYTICS.pageType,
+            service_id: window.WABOTTI_ANALYTICS.serviceId,
+            service_name: window.WABOTTI_ANALYTICS.serviceName
         });
     }
 
@@ -148,15 +148,15 @@
     }
 
     // Expose tracking function for custom events
-    window.epikalTrack = function (eventType, data) {
-        if (!window.EPIKAL_ANALYTICS) return;
+    window.wabottiTrack = function (eventType, data) {
+        if (!window.WABOTTI_ANALYTICS) return;
 
         fetch('/api/analytics/track', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 type: eventType,
-                companyId: window.EPIKAL_ANALYTICS.companyId,
+                companyId: window.WABOTTI_ANALYTICS.companyId,
                 path: window.location.pathname,
                 sessionId: sessionId,
                 visitorId: visitorId,

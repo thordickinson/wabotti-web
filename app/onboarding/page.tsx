@@ -107,7 +107,7 @@ export default function OnboardingPage() {
                     </div>
                     <CardTitle className="text-2xl">Crea tu empresa</CardTitle>
                     <CardDescription>
-                        Configura tu negocio para comenzar a usar Epikal
+                        Configura tu negocio para comenzar a usar Wabotti
                     </CardDescription>
                 </CardHeader>
                 <form onSubmit={handleSubmit}>
@@ -133,7 +133,7 @@ export default function OnboardingPage() {
                             <Label htmlFor="slug">URL pública</Label>
                             <div className="flex items-center gap-1">
                                 <span className="text-sm text-muted-foreground whitespace-nowrap">
-                                    epikal.com/
+                                    wabotti.com/
                                 </span>
                                 <Input
                                     id="slug"

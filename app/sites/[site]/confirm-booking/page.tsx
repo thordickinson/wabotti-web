@@ -49,7 +49,7 @@ export default function ConfirmBookingPage() {
             <Card className="max-w-md w-full shadow-lg">
                 <CardHeader className="text-center">
                     <CardTitle className="text-2xl font-bold">Confirmación de Cita</CardTitle>
-                    <CardDescription>Epikal Scheduling System</CardDescription>
+                    <CardDescription>Wabotti Scheduling System</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                     {status === "loading" && (

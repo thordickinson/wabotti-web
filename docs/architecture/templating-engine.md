@@ -1,12 +1,12 @@
 # Templating Engine Architecture
 
-This document describes the architecture for the "Epikal Sites" templating system, which serves public-facing pages (landing pages, portfolios, etc.) based on 11ty-generated templates with dynamic data injection.
+This document describes the architecture for the "Wabotti Sites" templating system, which serves public-facing pages (landing pages, portfolios, etc.) based on 11ty-generated templates with dynamic data injection.
 
 ---
 
 ## High-Level Flow
 
-1.  **Request**: Public user visits `client.epikal.com` (or standard domain with header).
+1.  **Request**: Public user visits `client.wabotti.com` (or standard domain with header).
 2.  **Resolution**: Server determines the **Tenant** (Company) based on the `Origin` or `Host` header.
 3.  **Template Retrieval**: Server identifies the active `Template` for that Tenant.
 4.  **Injection**:
@@ -27,7 +27,7 @@ This document describes the architecture for the "Epikal Sites" templating syste
     - Providing the *source* 11ty code would require a complex server-side build pipeline, which is likely out of scope for "just inject values".
     - *Constraint:* The `index.html` must differ execution until `window.TEMPLATE_DATA` is available.
 - **Storage Strategy:**
-    - **Production:** S3 Bucket (e.g., `s3://epikal-templates/{templateId}/v{version}/`).
+    - **Production:** S3 Bucket (e.g., `s3://wabotti-templates/{templateId}/v{version}/`).
     - **Development:** Local Filesystem (e.g., `tmp/templates/{templateId}/`).
 - **Processing:**
     - On upload, the system **unzips** the file to the storage provider.
@@ -87,7 +87,7 @@ The "Engine" is a Next.js Route Handler or Page that acts as a proxy/injector.
 
 If `index.html` requests `<link rel="stylesheet" href="./style.css">`:
 
-- The browser requests `client.epikal.com/style.css`.
+- The browser requests `client.wabotti.com/style.css`.
 - Our route handler `[[...path]]` catches this.
 - Detects extension is not HTML.
 - Proxy finds the asset in Storage (`s3://.../{templateId}/style.css`) and streams it back.

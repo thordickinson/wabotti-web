@@ -7,7 +7,7 @@ import { randomUUID } from "crypto";
 import { addDays, subDays, startOfHour, setHours } from "date-fns";
 
 /**
- * Seed script for Epikal database
+ * Seed script for Wabotti database
  * Refined version for full system testing with rich content
  */
 

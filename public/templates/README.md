@@ -1,6 +1,6 @@
-# Epikal Site Templates - Developer Guide
+# Wabotti Site Templates - Developer Guide
 
-Welcome to the Epikal Template Engine. This system is designed to separate **Logic/Data (The Engine)** from **Design (The Theme)**, allowing developers to create stunning, distinct templates while reusing the core functionality.
+Welcome to the Wabotti Template Engine. This system is designed to separate **Logic/Data (The Engine)** from **Design (The Theme)**, allowing developers to create stunning, distinct templates while reusing the core functionality.
 
 ## Architecture Overview
 
