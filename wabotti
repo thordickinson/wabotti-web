@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Epikal CLI - Wrapper for Docker Compose and Development Tasks
+# Wabotti CLI - Wrapper for Docker Compose and Development Tasks
 # This script provides a simple interface to manage the development and production environments.
 
 COMMAND=$1
@@ -8,7 +8,7 @@ SUBCOMMAND=$2
 
 # Help function
 show_help() {
-    echo "Usage: ./epikal [dev|prod] [start|stop|logs|restart|shell]"
+    echo "Usage: ./wabotti [dev|prod] [start|stop|logs|restart|shell]"
     echo ""
     echo "Environments:"
     echo "  dev   Managed by docker-compose.dev.yml (Postgres, Redis, MailHog)"
@@ -60,7 +60,7 @@ case "$SUBCOMMAND" in
         else
             docker compose -f $COMPOSE_FILE up -d
             echo "🐳 Waiting for database..."
-            until docker compose -f $COMPOSE_FILE exec postgres pg_isready -U epikal -d epikal > /dev/null 2>&1; do
+            until docker compose -f $COMPOSE_FILE exec postgres pg_isready -U wabotti -d wabotti > /dev/null 2>&1; do
                 sleep 1
             done
             echo "📦 Running migrations..."
@@ -94,7 +94,7 @@ case "$SUBCOMMAND" in
         if [ "$COMMAND" == "prod" ]; then
              docker compose -f $COMPOSE_FILE exec web sh
         else
-             docker compose -f $COMPOSE_FILE exec postgres psql -U epikal -d epikal
+             docker compose -f $COMPOSE_FILE exec postgres psql -U wabotti -d wabotti
         fi
         ;;
     *)

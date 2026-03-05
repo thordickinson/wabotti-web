@@ -38,7 +38,7 @@ export const BASE_LAYOUT = `
         <div class="footer">
             <p>&copy; {{year}} {{companyName}}. Todos los derechos reservados.</p>
             <div class="powered-by">
-                Powered by <a href="https://epikal.com">Epikal</a>
+                Powered by <a href="https://wabotti.com">Wabotti</a>
             </div>
         </div>
     </div>

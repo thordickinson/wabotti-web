@@ -1,4 +1,4 @@
-# Epikal Web
+# Wabotti Web
 
 Plataforma SaaS para gestión de clínicas estéticas y salones de belleza.
 

@@ -94,7 +94,7 @@ export async function sendBookingSuccessEmail({
         title: `${serviceName} - ${companyName}`,
         description: `Cita agendada para ${customerName} en ${companyName}. Servicio: ${serviceName}.`,
         location: companyName, // Could be more specific if we had the location address
-        organizer: { name: companyName, email: 'noreply@epikal.com' },
+        organizer: { name: companyName, email: 'noreply@wabotti.com' },
         status: 'CONFIRMED',
         busyStatus: 'BUSY',
     };
@@ -172,7 +172,7 @@ export async function sendBookingRescheduledEmail({
         title: `${serviceName} - ${companyName} (Reagendada)`,
         description: `Cita reprogramada para ${customerName} en ${companyName}. Servicio: ${serviceName}.`,
         location: companyName,
-        organizer: { name: companyName, email: 'noreply@epikal.com' },
+        organizer: { name: companyName, email: 'noreply@wabotti.com' },
         status: 'CONFIRMED',
         busyStatus: 'BUSY',
         sequence: 1 // Increment sequence for updates (simplified approach)

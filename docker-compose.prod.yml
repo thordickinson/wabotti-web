@@ -1,13 +1,13 @@
 services:
   web:
     build: .
-    container_name: epikal-web-prod
+    container_name: wabotti-web-prod
     restart: always
     ports:
       - "3000:3000"
     env_file: .env
     environment:
-      - DATABASE_URL=postgresql://epikal:epikal@postgres:5432/epikal?sslmode=disable
+      - DATABASE_URL=postgresql://wabotti:wabotti@postgres:5432/wabotti?sslmode=disable
       - REDIS_URL=redis://redis:6379
       - NEXT_PUBLIC_APP_URL=http://localhost:3000
       - NODE_ENV=production
@@ -17,30 +17,30 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - epikal-network
+      - wabotti-network
 
   postgres:
     image: postgres:15-alpine
-    container_name: epikal-postgres-prod
+    container_name: wabotti-postgres-prod
     restart: always
     environment:
-      POSTGRES_USER: epikal
-      POSTGRES_PASSWORD: epikal
-      POSTGRES_DB: epikal
+      POSTGRES_USER: wabotti
+      POSTGRES_PASSWORD: wabotti
+      POSTGRES_DB: wabotti
     volumes:
       - postgres_data_prod:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U epikal -d epikal"]
+      test: ["CMD-SHELL", "pg_isready -U wabotti -d wabotti"]
       interval: 10s
       timeout: 5s
       retries: 5
     networks:
-      - epikal-network
+      - wabotti-network
     # No ports exposed to host for security
 
   redis:
     image: redis:7-alpine
-    container_name: epikal-redis-prod
+    container_name: wabotti-redis-prod
     restart: always
     volumes:
       - redis_data_prod:/data
@@ -50,11 +50,11 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - epikal-network
+      - wabotti-network
     # No ports exposed to host for security
 
 networks:
-  epikal-network:
+  wabotti-network:
     driver: bridge
 
 volumes:

@@ -1,10 +1,10 @@
-# AGENTS.md — Epikal
+# AGENTS.md — Wabotti
 
 ## Purpose
 
-Este archivo define **cómo deben operar los agentes de IA dentro del proyecto Epikal**.
+Este archivo define **cómo deben operar los agentes de IA dentro del proyecto Wabotti**.
 
-Epikal es un **SaaS multi-tenant para negocios de servicios**, con una arquitectura modular,
+Wabotti es un **SaaS multi-tenant para negocios de servicios**, con una arquitectura modular,
 orientada a confiabilidad, escalabilidad y claridad de dominio.
 
 Los agentes de IA **no improvisan arquitectura**: siguen este documento y los archivos en `/docs`.
@@ -21,7 +21,7 @@ Antes de hacer cualquier acción, el agente **DEBE** revisar:
 - `/docs/Modulos/` (Módulos 1 al 9)
 
 Estos documentos definen:
-- Qué es Epikal
+- Qué es Wabotti
 - Cómo está diseñado
 - En qué orden se construye
 - Qué responsabilidades tiene cada módulo
@@ -30,9 +30,9 @@ Si hay conflicto entre una instrucción y los docs → **los docs ganan**.
 
 ---
 
-## Modelo Mental de Epikal
+## Modelo Mental de Wabotti
 
-Epikal **no es una app monolítica de features**, es un sistema compuesto por **módulos bien definidos**.
+Wabotti **no es una app monolítica de features**, es un sistema compuesto por **módulos bien definidos**.
 
 ### Módulos funcionales (dominio)
 
@@ -133,7 +133,7 @@ Si una propuesta rompe el aislamiento de tenants → **es inválida**.
 
 ## Infraestructura Abstracta
 
-Epikal **no se acopla a proveedores**.
+Wabotti **no se acopla a proveedores**.
 
 Todo acceso externo se hace vía interfaces:
 
@@ -173,7 +173,7 @@ Los agentes:
 
 ## Diseño Responsive y Mobile-First
 
-Epikal **DEBE** ser completamente responsive y diseñado con enfoque **mobile-first**.
+Wabotti **DEBE** ser completamente responsive y diseñado con enfoque **mobile-first**.
 
 ### Reglas de UI
 
@@ -198,14 +198,15 @@ Antes de considerar una UI completa, verificar en:
 
 ### Regla Absoluta de Idioma
 
-**TODO el código debe estar en INGLÉS:**
+**TODO el código, conceptos técnicos y estructura de datos debe estar en INGLÉS:**
 - Variables, funciones, clases, tipos
-- Nombres de archivos
+- Nombres de archivos, directorios y rutas
+- **Tablas y campos de la base de datos (Prisma schema)**
 - Comentarios en el código
 - Commits de Git
-- Documentación técnica
+- Documentación técnica (especialmente en `/docs`)
 
-**TODAS las etiquetas de UI deben estar en ESPAÑOL:**
+**TODAS las etiquetas de UI de cara al usuario deben estar en ESPAÑOL:**
 - Labels de formularios
 - Botones
 - Mensajes de error
@@ -218,10 +219,10 @@ Antes de considerar una UI completa, verificar en:
 
 ✅ **Correcto:**
 ```typescript
-// Código en inglés
-const handleSubmit = async (data: FormData) => {
+// Código en inglés (incluyendo conceptos)
+const handleServiceSubmit = async (data: ServiceFormData) => {
   try {
-    await createService(data);
+    await serviceRepository.create(data);
     toast.success("Servicio creado exitosamente"); // Label en español
   } catch (error) {
     toast.error("Error al crear el servicio"); // Label en español
@@ -236,7 +237,7 @@ const handleSubmit = async (data: FormData) => {
 
 ❌ **Incorrecto:**
 ```typescript
-// NO mezclar idiomas en código
+// NO mezclar idiomas en código ni en UI opuesta
 const manejarEnvio = async (datos: FormData) => { // ❌ Español en código
   toast.success("Service created successfully"); // ❌ Inglés en UI
 };
@@ -244,16 +245,16 @@ const manejarEnvio = async (datos: FormData) => { // ❌ Español en código
 
 ### Conversaciones con el Usuario
 
-- Las conversaciones pueden ser en inglés o español según preferencia del usuario
-- Los agentes deben adaptarse al idioma de la conversación
-- **Independientemente del idioma de conversación, el código SIEMPRE en inglés y las labels SIEMPRE en español**
+- Las conversaciones pueden ser en **español** (por defecto para este equipo) o inglés según preferencia del usuario.
+- Los agentes deben adaptarse al idioma de la conversación.
+- **Independientemente del idioma de conversación, el código y base de datos SIEMPRE en inglés y las labels de UI SIEMPRE en español.**
 
 ---
 
 ## Aprendizaje y Evolución
 
 
-Epikal es un sistema vivo.
+Wabotti es un sistema vivo.
 
 Si un agente descubre:
 - Un edge case
@@ -271,8 +272,8 @@ Nunca aplicar cambios silenciosos.
 
 ## Regla Final
 
-> **Epikal prioriza claridad, coherencia y arquitectura por encima de velocidad.**
+> **Wabotti prioriza claridad, coherencia y arquitectura por encima de velocidad.**
 
 Los agentes están aquí para **fortalecer el sistema**, no para improvisar.
 
-Be precise. Be consistent. Build Epikal right.
+Be precise. Be consistent. Build Wabotti right.

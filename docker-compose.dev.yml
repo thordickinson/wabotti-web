@@ -1,28 +1,28 @@
-# Docker Compose configuration for Epikal development environment
+# Docker Compose configuration for Wabotti development environment
 # Usage: docker compose up -d
 
 services:
   postgres:
     image: postgres:15-alpine
-    container_name: epikal-postgres
+    container_name: wabotti-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: epikal
-      POSTGRES_PASSWORD: epikal
-      POSTGRES_DB: epikal
+      POSTGRES_USER: wabotti
+      POSTGRES_PASSWORD: wabotti
+      POSTGRES_DB: wabotti
     ports:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U epikal -d epikal"]
+      test: ["CMD-SHELL", "pg_isready -U wabotti -d wabotti"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: epikal-redis
+    container_name: wabotti-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -36,7 +36,7 @@ services:
 
   mailhog:
     image: mailhog/mailhog:latest
-    container_name: epikal-mailhog
+    container_name: wabotti-mailhog
     platform: linux/amd64
     restart: unless-stopped
     ports:

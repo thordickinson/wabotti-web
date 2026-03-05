@@ -11,7 +11,7 @@ import { addDays, subDays, startOfHour, setHours } from "date-fns";
  * Refined version for full system testing with rich content
  */
 
-const connectionString = process.env.DATABASE_URL || "postgresql://epikal:epikal@127.0.0.1:5433/epikal?sslmode=disable";
+const connectionString = process.env.DATABASE_URL || "postgresql://wabotti:wabotti@127.0.0.1:5433/wabotti?sslmode=disable";
 const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 
@@ -50,7 +50,7 @@ async function main() {
     console.log("🚀 Creating System HQ...");
     const systemCompany = await prisma.company.create({
         data: {
-            name: "Epikal Headquarters",
+            name: "Wabotti Headquarters",
             slug: "system",
             status: "ACTIVE",
             language: "es",
@@ -215,7 +215,7 @@ async function main() {
     console.log("👤 Creating user accounts...");
 
     const usersData = [
-        { email: "superadmin@epikal.com", name: "Super Admin", role: "SUPERADMIN", companyId: systemCompany.id },
+        { email: "superadmin@wabotti.com", name: "Super Admin", role: "SUPERADMIN", companyId: systemCompany.id },
         { email: "admin@clinica-aurora.com", name: "Dra. Sofía Mendoza", role: "OWNER", companyId: company.id },
         { email: "admin@clinica-cancelada.com", name: "Admin Cancelado", role: "OWNER", companyId: companyCanceled.id },
         { email: "admin@clinica-deudora.com", name: "Admin Deudor", role: "OWNER", companyId: companyPastDue.id },

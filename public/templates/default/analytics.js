@@ -1,5 +1,5 @@
 /**
- * Epikal Analytics Tracker
+ * Wabotti Analytics Tracker
  * Lightweight client-side analytics for public templates
  * 
  * Features:
@@ -38,17 +38,17 @@
     // =========================================================================
 
     // Session ID (expires in 30 minutes)
-    let sessionId = getCookie('epikal_session');
+    let sessionId = getCookie('wabotti_session');
     if (!sessionId) {
         sessionId = generateId();
-        setCookie('epikal_session', sessionId, 0.02); // 30 min = 0.02 days
+        setCookie('wabotti_session', sessionId, 0.02); // 30 min = 0.02 days
     }
 
     // Visitor ID (expires in 2 years)
-    let visitorId = getCookie('epikal_visitor');
+    let visitorId = getCookie('wabotti_visitor');
     if (!visitorId) {
         visitorId = generateId();
-        setCookie('epikal_visitor', visitorId, 730); // 2 years
+        setCookie('wabotti_visitor', visitorId, 730); // 2 years
     }
 
     // =========================================================================
@@ -71,8 +71,8 @@
     // =========================================================================
 
     function trackPageview() {
-        if (!window.EPIKAL_ANALYTICS) {
-            console.warn('EPIKAL_ANALYTICS not configured');
+        if (!window.WABOTTI_ANALYTICS) {
+            console.warn('WABOTTI_ANALYTICS not configured');
             return;
         }
 

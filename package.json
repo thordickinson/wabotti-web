@@ -1,5 +1,5 @@
 {
-  "name": "kiliari-web",
+  "name": "wabotti-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -94,6 +94,13 @@
   },
   "pnpm": {
     "allowedBuildScripts": [
+      "@prisma/engines",
+      "esbuild",
+      "prisma",
+      "sharp",
+      "unrs-resolver"
+    ],
+    "onlyBuiltDependencies": [
       "@prisma/engines",
       "esbuild",
       "prisma",

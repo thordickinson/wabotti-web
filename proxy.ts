@@ -19,7 +19,7 @@ export function proxy(request: NextRequest) {
 
     // Module 3: Subdomain Handling (Sites)
     const isLocal = hostname.includes("localhost") || hostname.includes("127.0.0.1");
-    const rootDomain = (process.env.NEXT_PUBLIC_ROOT_DOMAIN || "epikal.com").split(':')[0];
+    const rootDomain = (process.env.NEXT_PUBLIC_ROOT_DOMAIN || "wabotti.com").split(':')[0];
 
     // Robust Main Domain Check (Port agnostic)
     const isMainDomain = isLocal

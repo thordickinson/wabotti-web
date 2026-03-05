@@ -14,7 +14,7 @@ interface SendEmailOptions {
 }
 
 export class EmailService {
-    private static fromEmail = process.env.SMTP_FROM || 'Epikal <noreply@epikal.com>';
+    private static fromEmail = process.env.SMTP_FROM || 'Wabotti <noreply@wabotti.com>';
     private static siteUrl = process.env.BETTER_AUTH_URL || 'http://localhost:3000';
 
     /**
@@ -31,7 +31,7 @@ export class EmailService {
             const commonData = {
                 siteUrl: this.siteUrl,
                 year: new Date().getFullYear(),
-                brandingColor: '#471ca8', // Default Epikal Indigo
+                brandingColor: '#471ca8', // Default Wabotti Indigo
                 ...data
             };
 

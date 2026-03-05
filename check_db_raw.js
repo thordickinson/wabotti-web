@@ -4,7 +4,7 @@ dotenv.config();
 
 async function main() {
     const client = new Client({
-        connectionString: process.env.DATABASE_URL || "postgresql://epikal:epikal@127.0.0.1:5433/epikal?sslmode=disable",
+        connectionString: process.env.DATABASE_URL || "postgresql://wabotti:wabotti@127.0.0.1:5433/wabotti?sslmode=disable",
     });
 
     try {
